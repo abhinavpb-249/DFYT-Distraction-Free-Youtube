@@ -19,10 +19,12 @@
         var linkInput = document.getElementById("link-input").value;
     
     const myArray = linkInput.split("youtu.be/");
-    var final = "https://www.youtube.com/embed/"+myArray[1];
+    var final = "https://www.youtube.com/embed/"+myArray[1]+"?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0";
     var iframe = document.getElementById("my-iframe");
     iframe.src = final;
-  }
+
+  }  
+   
 </script>
     </body>
 
