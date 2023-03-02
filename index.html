@@ -2,30 +2,153 @@
 <head>
 <h1>DFYT- Distraction Free Youtube </h1> <br>
 <meta name="description" content="Use this website to watch videos without distractions such as youtube suggestion,recommendations or commments">
+
+<style>
+#player-size {
+  /* comment below line for responsive 16:9 full screen */
+  width: 100%;
+  /* only need to specify width since 16:9 ratio is  
+     preserved / automatically applied */
+}
+
+#cropping-div {
+  overflow: hidden;
+}
+
+#div-to-crop {
+  overflow: hidden;
+  margin-top: -51%;
+  margin-bottom: -20%;
+}
+
+#player-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding-top: 128.25%;
+}
+
+#player {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 124%;
+  
+}
+
+table {
+    border: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: 14px/20px Noto Sans Bengali,sans-serif;
+    margin: 16px 0 15px;
+    width: 100%;
+}
+
+
+</style>
+
+<script>
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement("script");
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName("script")[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+
+
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("player", {
+    host: "https://www.youtube.com",
+    /* no need to specify player 
+    size here since it is handled 
+    by the player-size div */
+    videoId: "7YZCUpnaTfg",
+    playerVars: {
+      enablejsapi: 1,
+      playsinline: 1,
+      start: 0,
+      disablekb: 0
+    },
+    events: {
+      onStateChange: onPlayerStateChange
+    }
+  });
+}
+
+function onPlayerStateChange(event) {
+  console.log("player state: " + player.getPlayerState());
+}
+
+function updateVideoId() {
+  let videoId = document.getElementById("videoId").value;
+  
+    const myArray = videoId.split("youtu.be/");
+    var final = myArray[1];
+  
+  player.loadVideoById(final, -1);
+}
+
+function stopVideo() {
+  player.stopVideo();
+}
+
+</script>
+
+
+<!-- JavaScript code to set the iframe's src based on user input -->
+
+
+
 </head>
   
   <body>
+  
+  
+  
+  
+  
 <!-- HTML code for the input field where the user can enter a link -->
-<label for="link-input">Enter link:</label>
-<input type="text" id="link-input">
-<button onclick="setIframeSrc()">Load</button>
 
-<!-- HTML code to create the iframe -->
-<iframe id="my-iframe" width="100%" height="500"></iframe>
 
-<!-- JavaScript code to set the iframe's src based on user input -->
-<script>
-  function setIframeSrc() {
-        var linkInput = document.getElementById("link-input").value;
-    
-    const myArray = linkInput.split("youtu.be/");
-    var final = "https://www.youtube.com/embed/"+myArray[1]+"?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0";
-    var iframe = document.getElementById("my-iframe");
-    iframe.src = final;
+ <table style="border: 0; width: 310px;">
+      <tbody>
+        <tr style="background: #fff;">
+          <td>
+            <label for="videoId-property">link: </label>
+            <input type="text" id="videoId" style="width: 100px"><br>
+          </td>
 
-  }  
+          <td style="">
+            <button id="videoId-properties" onclick="updateVideoId()">Load</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+            
+
+ <div id="player-size" style="">
+      <div id="cropping-div" style="">
+        <div id="div-to-crop" style="">
+          <div id="player-wrapper">
+            <!-- 1. The <iframe> (and video 
+            player) will replace this <div> 
+            tag. -->
+            <div id="player"></div>
+          </div>
+        </div>
+      </div>
+    </div>
    
-</script>
+  
+
     </body>
 
 </html>
+
