@@ -159,9 +159,21 @@ elem = document.getElementById("player-size");
         </div>
       </div>
       
-      <button onclick="openFullscreen();" style=" position:relative; right:0px; width:30px; height:30px; background-color:#FFFFFF;  margin:1px;" >  ⛶  </button>
+      <button class="myDiv" onclick="openFullscreen();" style=" position:relative; right:0px; width:30px; height:30px; background-color:#FFFFFF;  margin:1px;" >  ⛶  </button> 
+      <span class="hide">View in Fullscreen mode</span>
       
     </div>
+    
+    <style>
+    .hide {
+  display: none;
+}
+    
+.myDIV:hover + .hide {
+  display: block;
+  
+}
+    </style>
    
 
 
