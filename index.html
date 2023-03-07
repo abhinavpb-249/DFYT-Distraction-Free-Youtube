@@ -105,6 +105,21 @@ function stopVideo() {
   player.stopVideo();
 }
 
+
+
+function openFullscreen() {
+
+elem = document.getElementById("player-size");
+
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  } 
+}
+
 </script>
 
 
@@ -145,7 +160,7 @@ function stopVideo() {
       </div>
     </div>
    
-
+<button onclick="openFullscreen();" >Open Video in Fullscreen Mode</button>
 
     </body>
 
