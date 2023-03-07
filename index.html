@@ -4,7 +4,7 @@
 <meta name="google-site-verification" content="Cdaq2inFYYmIlgpzXcukhUilZjEFLEgr5m5N8WKixNs" />
 <meta name="description" content="Use this website to watch videos without distractions such as youtube suggestion,recommendations or commments">
  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-	
+ 
 <style>
   
   h1{
@@ -120,6 +120,19 @@ elem = document.getElementById("player-size");
     elem.msRequestFullscreen();
   } 
 }
+
+ window.onload = function() {
+  
+  if (window.matchMedia("(max-width: 767px)").matches)
+{
+// The viewport is less than 768 pixels wide
+
+document.getElementById("player-size").style.width="100%";
+}
+  
+  }
+
+
 
 </script>
 
