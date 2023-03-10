@@ -143,21 +143,22 @@ document.getElementById("player-size").style.width="100%";
 
 </head>
   
-  <body>
+<body>
   
   
-  
-  
-  
-<!-- HTML code for the input field where the user can enter a link -->
+ <!-- HTML code for the input field where the user can enter a link -->
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-<div style="position:relative; left:40%;">
-            <label for="videoId-property">link: </label>
-            <input type="text" id="videoId" style="width: 100px">
+ <div style="margin:auto;max-width:300px">
+
+            <input type="text" id="videoId" placeholder="paste your link here">
          
-            <button id="videoId-properties" onclick="updateVideoId()">Load</button>
-</div>         
+            <button id="videoId-properties" onclick="updateVideoId()">
+              <i class="fa fa-search"></i>
+            </button> 
+ </div>         
 
         <br><br>
 
@@ -176,9 +177,10 @@ document.getElementById("player-size").style.width="100%";
       <button class="myDiv" onclick="openFullscreen();" style=" position:relative; right:0px; width:30px; height:30px; background-color:#FFFFFF;  margin:1px;" >  ⛶  </button> 
       <span class="hide">View in Fullscreen mode</span>
       
-    </div>
+  </div>
     
-    <style>
+
+<style>
     .hide {
   display: none;
 }
@@ -187,11 +189,9 @@ document.getElementById("player-size").style.width="100%";
   display: block;
   
 }
-    </style>
+</style>
    
-
-
-    </body>
+</body>
 
 </html>
 
