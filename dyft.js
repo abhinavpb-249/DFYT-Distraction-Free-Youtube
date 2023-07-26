@@ -63,17 +63,7 @@ elem = document.getElementById("player-size");
 }
 
 
-//adjust size for mobile screens
- window.onload = function() {
-  
-  if (window.matchMedia("(max-width: 767px)").matches)
-{
-// The viewport is less than 768 pixels wide
 
-document.getElementById("player-size").style.width="100%";
-}
-  
-  }
 
   
 

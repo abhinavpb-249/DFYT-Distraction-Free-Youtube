@@ -16,6 +16,24 @@
      preserved / automatically applied */
 }
 
+.search{
+  /* margin:auto;
+  max-width:300px; */
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 15px; */
+  max-width: 600px;
+  margin:auto
+}
+
+.container div{
+  margin: 10px;
+}
+
 #cropping-div {
   overflow: hidden;
 }
@@ -49,4 +67,16 @@ table {
     width: 100%;
 }
 
-
+.btn{
+  /* position:relative; 
+  right:0px; width:30px; 
+  height:30px; 
+  background-color:#FFFFFF;  
+  margin:1px; */
+  color: white;
+  background-color: rgb(9, 116, 143);
+  padding: 5px;
+  border-radius: 7px;
+  width: fit-content;
+  cursor: pointer;
+}

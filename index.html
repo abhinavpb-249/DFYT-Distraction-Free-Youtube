@@ -1,69 +1,64 @@
 <html>
 <head>
-<h1>DFYT- Distraction Free Youtube </h1> <br>
+  <title>DYFT</title>
+
 <meta name="google-site-verification" content="Cdaq2inFYYmIlgpzXcukhUilZjEFLEgr5m5N8WKixNs" />
 <meta name="description" content="Use this website to watch videos without distractions such as youtube suggestion,recommendations or commments">
- <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
  
 <link href="styles.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 <script src="dyft.js">
 </script>
-
-
-<!-- JavaScript code to set the iframe's src based on user input -->
-
-
 
 </head>
   
 <body>
   
-  
+  <h1>DFYT- Distraction Free Youtube </h1> <br>
  <!-- HTML code for the input field where the user can enter a link -->
 
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
- <div style="margin:auto;max-width:300px">
-
-            <input type="text" id="videoId" placeholder="paste your link here">
-         
-            <button id="videoId-properties" onclick="updateVideoId()">
-              <i class="fa fa-search"></i>
-            </button> 
- </div>         
-
-        <br><br>
-
- <div id="player-size" style="width:50%; margin:auto;">
-      <div id="cropping-div" style="">
-        <div id="div-to-crop" style="">
-          <div id="player-wrapper">
-            <!-- 1. The <iframe> (and video 
-            player) will replace this <div> 
-            tag. -->
-            <div id="player"></div>
+ <div class="container">
+   <div class="search">
+              <input type="text" id="videoId" placeholder="paste your link here">
+   
+              <button id="videoId-properties" onclick="updateVideoId()">
+                <i class="fa fa-search"></i>
+              </button>
+   </div>
+        
+   <div id="player-size">
+        <div id="cropping-div" style="">
+          <div id="div-to-crop" style="">
+            <div id="player-wrapper">
+              <!-- 1. The <iframe> (and video
+              player) will replace this <div>
+              tag. -->
+              <div id="player"></div>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <button class="myDiv" onclick="openFullscreen();" style=" position:relative; right:0px; width:30px; height:30px; background-color:#FFFFFF;  margin:1px;" >  ⛶  </button> 
-      <span class="hide">View in Fullscreen mode</span>
-      
-  </div>
+    </div>
+
+    <div class="btn" onclick="openFullscreen();"> View in Full screen </div>
+ </div>
    
    
 
 <style>
-    .hide {
+
+.hide {
   display: none;
 }
     
 .myDIV:hover + .hide {
-  display: block;
-  
+  display: block;  
 }
+
 </style>
    
 </body>
