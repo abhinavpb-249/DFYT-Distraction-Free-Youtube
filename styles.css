@@ -1,3 +1,8 @@
+ *{
+  padding: 0;
+  margin: 0;
+ } 
+
   h1{
 	color:white;
 	background-color:#2576b0;
